@@ -56,12 +56,6 @@ title: Rails Performance Monitoring as part of CI
       </div>
     </div>
 
-    <%= link_to(
-      'Start Monitoring Today (Free)',
-      '#',
-      class: 'btn btn-primary mb-2'
-    ) %>
-
     <div class="pigci-illustration-bacon"></div>
     <div class="pigci-illustration-tail"></div>
   </div>
@@ -108,6 +102,42 @@ title: Rails Performance Monitoring as part of CI
       <p class="text-left">Commits that exceed a normal threshold will cause the test suite to fail, you can then investigate by reviewing the output.</p>
     </div>
   </div>
+  
+  <div class="card-deck card-deck--pricing text-center">
+    <div class="card pigci-card-sub">
+      <div class="card-body">
+        <h3 class="mb-2 h3">Adding the Gem</h3>
+        <p>Add the gem to your Gemfile within a test group, so it'll only run when you run the test suite:</p>
+        <div class="text-left mb-5">
+<% code("ruby") do %>
+# Gemfile
+group :test do
+  gem 'pig-ci-rails'
+end
+<% end %>
+        </div>
+        <h3 class="mb-2 h3">Configuring thresholds</h3>
+        <p>You can change the thresholds, when your test suite exceeds these it will fail.</p>
+
+        <div class="text-left">
+<% code("ruby") do %>
+# spec/rails_helper.rb
+require 'pig_ci'
+PigCI.start do |config|
+  # Maximum memory in megabytes
+  config.thresholds.memory = 350
+
+  # Maximum time per a HTTP request
+  config.thresholds.request_time = 250
+
+  # Maximum database calls per a request
+  config.thresholds.database_request = 35
+end if RSpec.configuration.files_to_run.count > 1
+<% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="container pigci-container-sp text-center">
@@ -142,86 +172,4 @@ title: Rails Performance Monitoring as part of CI
       <p class="text-left">PigCI currently supports Ruby on Rails, tested via Rspec.</p>
     </div>
   </div>
-</section>
-
-<section class="container pigci-container-sp text-center">
-  <h2 id="pricing">Setup</h2>
-  <div class="pigci-hr pigci-hr-tail mb-8">
-    <div class="left"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="right"></div>
-  </div>
-
-  <div class="card-deck card-deck--pricing text-center">
-    <div class="card pigci-card-sub">
-      <div class="card-body">
-        <h3 class="h3 mb-2">Gemfile</h3>
-        <div>
-<% code("ruby") do %>
-group :test do
-  gem 'pig-ci-rails'
-end
-<% end %>
-        </div>
-      </div>
-    </div>
-    <div class="card pigci-card-primary">
-      <div class="card-body">
-        <h3 class="mb-2 h3">Commercial</h3>
-        <p class="mb-2 h1">Free<br /><span class="h4">For the first 100 users</span></p>
-
-        <p class="mb-2 h5">everything from Free tier, plus:</p>
-        <ul class="pigci-list-pricing">
-          <li>Special early adopter pricing</li>
-          <li>includes private repos</li>
-        </ul>
-      </div>
-    </div>
-    <div class="card pigci-card-sub">
-      <div class="card-body">
-        <h3 class="mb-2 h3">spec/rails_helper.rb</h3>
-        <div>
-<% code("ruby") do %>
-require 'pig_ci'
-PigCI.start
-<% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="container pigci-container-sp text-center pigci-section-footer-cta">
-  <h2>Let&#39;s go!</h2>
-  <div class="pigci-hr pigci-hr-tail mb-8">
-    <div class="left"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="right"></div>
-  </div>
-
-  <div class="container mb-8">
-    <div class="row">
-      <div class="col-12 col-md-8 offset-md-2">
-        <p class="h2">PigCI is a GitHub integration, so you can get setup in just a few minutes.</p>
-      </div>
-    </div>
-  </div>
-
-  <%= link_to(
-    'Get started',
-    '#',
-    class: 'btn btn-primary'
-  ) %>
-
-  <div class="pigci-illustration-bacon"></div>
-  <div class="pigci-illustration-tail"></div>
 </section>
