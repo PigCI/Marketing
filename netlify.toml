@@ -28,3 +28,43 @@
   from = "/wp-admin"
   to = "/"
   status = 301
+
+[[redirects]]
+  from = "/github-integration-deprecation-notice"
+  to = "/github-integration-deprecation-notice.html"
+  status = 301
+
+[[redirects]]
+  from = "/api"
+  to = "/github-integration-deprecation-notice.html"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/roadmap"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/github-integration-deprecation-notice.html"
+  status = 301
+
+[[redirects]]
+  from = "/terms-of-service"
+  to = "/github-integration-deprecation-notice.html"
+  status = 301
+
+[[redirects]]
+  from = "/cookie-policy"
+  to = "/github-integration-deprecation-notice.html"
+  status = 301
+
+[[redirects]]
+  from = "/subprocessors"
+  to = "/github-integration-deprecation-notice.html"
+  status = 301
