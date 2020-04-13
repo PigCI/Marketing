@@ -3,3 +3,10 @@
 .DS_Store
 .sass-cache
 build/
+.env
+log/*
+tmp/*
+
+spec/.validation/*
+
+node_modules/*
