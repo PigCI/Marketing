@@ -1,5 +1,5 @@
 ---
-title: Welcome to Middleman
+title: Rails Performance Monitoring as part of CI
 ---
 
 <script type="application/ld+json">
@@ -62,58 +62,10 @@ title: Welcome to Middleman
       class: 'btn btn-primary mb-2'
     ) %>
 
-    <%= link_to(
-      'Watch the Demo',
-      'https://www.youtube.com/watch?v=uodK1rY8J2c&feature=youtu.be',
-      class: 'btn btn-outline-primary mb-2',
-      'data-toggle': 'modal',
-      'data-target': "#modal__demo-video"
-    ) %>
-
     <div class="pigci-illustration-bacon"></div>
     <div class="pigci-illustration-tail"></div>
   </div>
 </header>
-
-<div
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  id="modal__demo-video"
-  aria-labelledby="pigciDemoVideoLabel"
-  aria-hidden="true"
-  data-controller="video-modal"
-  >
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">PigCI - Two Minute Demo</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <iframe
-          class="embed-responsive-item w-100 bg-light"
-          height="480"
-          src="about:blank"
-          data-target="video-modal.videoIframe"
-          data-src="//www.youtube-nocookie.com/embed/uodK1rY8J2c?vq=hd1080&modestbranding=1&showinfo=0&rel=0"
-          frameborder="0"
-          allowfullscreen="allowfullscreen"
-          ></iframe>
-
-        <div class="text-center mt-3 mb-2">
-          <%= link_to(
-            "Start Monitoring Today (Free)",
-            '#',
-            class: 'btn btn-primary'
-          ) %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <section class="container pigci-container-sp  mb-0 text-center">
 
@@ -132,20 +84,7 @@ title: Welcome to Middleman
   </div>
 
   <div class="row">
-    <div class="col-md-4 mb-8">
-      <h3>Add your project</h3>
-      <div class="pigci-hr pigci-hr-wiggle mb-3">
-        <div class="left"></div>
-        <div class="middle"></div>
-        <div class="middle"></div>
-        <div class="middle"></div>
-        <div class="middle"></div>
-        <div class="middle"></div>
-        <div class="right"></div>
-      </div>
-      <p class="text-left">Install the GitHub App &amp; you'll receive a dashboard for monitoring your Ruby on Rails application.</p>
-    </div>
-    <div class="col-md-4 mb-8">
+    <div class="offset-md-1 col-md-5 mb-8">
       <h3>Install the Gem</h3>
       <div class="pigci-hr pigci-hr-wiggle mb-3">
         <div class="left"></div>
@@ -155,9 +94,9 @@ title: Welcome to Middleman
         <div class="middle"></div>
         <div class="right"></div>
       </div>
-      <p class="text-left">Add our gem to your test suite, every time you run your test suite it will report performance metrics to PigCI.</p>
+      <p class="text-left">Add our gem to your test suite, every time you run your test suite the gem will monitor your app &amp; log metrics such as database requests and memory usage.</p>
     </div>
-    <div class="col-md-4 mb-8">
+    <div class="col-md-5 mb-8">
       <h3>See results</h3>
       <div class="pigci-hr pigci-hr-wiggle mb-3">
         <div class="left"></div>
@@ -166,7 +105,7 @@ title: Welcome to Middleman
         <div class="middle"></div>
         <div class="right"></div>
       </div>
-      <p class="text-left">Commits that exceed a normal threshold will be marked as a failure, you can then review the results to find out why.</p>
+      <p class="text-left">Commits that exceed a normal threshold will cause the test suite to fail, you can then investigate by reviewing the output.</p>
     </div>
   </div>
 </section>
@@ -206,7 +145,7 @@ title: Welcome to Middleman
 </section>
 
 <section class="container pigci-container-sp text-center">
-  <h2 id="pricing">Pricing</h2>
+  <h2 id="pricing">Setup</h2>
   <div class="pigci-hr pigci-hr-tail mb-8">
     <div class="left"></div>
     <div class="middle"></div>
@@ -219,13 +158,14 @@ title: Welcome to Middleman
   <div class="card-deck card-deck--pricing text-center">
     <div class="card pigci-card-sub">
       <div class="card-body">
-        <h3 class="h3 mb-2">Non-Commercial<br/>Open Source</h3>
-        <p class="h1 mb-2">Free</p>
-        <p class="h5 mb-2">always free for public open source</p>
-        <ul class="pigci-list-pricing">
-          <li>quick and easy setup</li>
-          <li>integrates with workflows</li>
-        </ul>
+        <h3 class="h3 mb-2">Gemfile</h3>
+        <div>
+<% code("ruby") do %>
+group :test do
+  gem 'pig-ci-rails'
+end
+<% end %>
+        </div>
       </div>
     </div>
     <div class="card pigci-card-primary">
@@ -242,15 +182,13 @@ title: Welcome to Middleman
     </div>
     <div class="card pigci-card-sub">
       <div class="card-body">
-        <h3 class="mb-2 h3">Enterprise</h3>
-        <div class="pigci-card-button mb-2">
-          <%= link_to 'Contact Us', '#', class: 'btn btn-primary btn-sm' %>
+        <h3 class="mb-2 h3">spec/rails_helper.rb</h3>
+        <div>
+<% code("ruby") do %>
+require 'pig_ci'
+PigCI.start
+<% end %>
         </div>
-        <p class="mb-2 h5">for GitHub Enterprise users</p>
-        <ul class="pigci-list-pricing">
-          <li>store data on your own servers</li>
-          <li>premium support</li>
-        </ul>
       </div>
     </div>
   </div>

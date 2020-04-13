@@ -12,7 +12,10 @@ gem 'middleman', '~> 4.2'
 gem 'middleman-minify-html'
 gem 'middleman-sprockets'
 
-gem 'middleman-autoprefixer', '~> 2.7'
+gem 'middleman-syntax'
+
+gem 'liquid', require: false
+gem 'redcarpet'
 
 gem 'sass'
 gem 'sassc-rails'
