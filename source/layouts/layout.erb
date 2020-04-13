@@ -7,7 +7,6 @@
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title || "PigCI" %></title>
     <%= stylesheet_link_tag "site" %>
-    <%= javascript_include_tag "site" %>
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700|Eczar:500|Source+Sans+Pro&display=swap', media: 'all' %>
 
     <% ['180x180', '152x152', '144x144', '72x72'].each do |favicon_size| %>
