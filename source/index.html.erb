@@ -73,14 +73,9 @@ title: Rails Performance Monitoring as part of CI
   <h2>How it works</h2>
   <div class="pigci-hr pigci-hr-tail mb-8">
     <div class="left"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
+    <% 8.times do %>
+      <div class="middle"></div>
+    <% end %>
     <div class="right"></div>
   </div>
 
@@ -89,10 +84,9 @@ title: Rails Performance Monitoring as part of CI
       <h3>Install the Gem</h3>
       <div class="pigci-hr pigci-hr-wiggle mb-3">
         <div class="left"></div>
-        <div class="middle"></div>
-        <div class="middle"></div>
-        <div class="middle"></div>
-        <div class="middle"></div>
+        <% 4.times do %>
+          <div class="middle"></div>
+        <% end %>
         <div class="right"></div>
       </div>
       <p class="text-left">Add our gem to your test suite, every time you run your test suite the gem will monitor your app &amp; log metrics such as database requests and memory usage.</p>
@@ -101,9 +95,9 @@ title: Rails Performance Monitoring as part of CI
       <h3>See results</h3>
       <div class="pigci-hr pigci-hr-wiggle mb-3">
         <div class="left"></div>
-        <div class="middle"></div>
-        <div class="middle"></div>
-        <div class="middle"></div>
+        <% 3.times do %>
+          <div class="middle"></div>
+        <% end %>
         <div class="right"></div>
       </div>
       <p class="text-left">Commits that exceed a normal threshold will cause the test suite to fail, you can then investigate by reviewing the output.</p>
@@ -151,22 +145,12 @@ end if RSpec.configuration.files_to_run.count > 1
   <h2>Supported Frameworks</h2>
   <div class="pigci-hr pigci-hr-tail mb-8">
     <div class="left"></div>
-    <div class="middle d-none d-sm-block"></div>
-    <div class="middle d-none d-sm-block"></div>
-    <div class="middle d-none d-sm-block"></div>
-    <div class="middle d-none d-sm-block"></div>
-    <div class="middle d-none d-sm-block"></div>
-    <div class="middle d-none d-sm-block"></div>
-    <div class="middle d-none d-sm-block"></div>
-    <div class="middle d-none d-sm-block"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
-    <div class="middle"></div>
+    <% 8.times do %>
+      <div class="middle d-none d-sm-block"></div>
+    <% end %>
+    <% 8.times do %>
+      <div class="middle"></div>
+    <% end %>
     <div class="right"></div>
   </div>
 
