@@ -51,7 +51,6 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashie (3.6.0)
-    htmlcompressor (0.2.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     kramdown (1.17.0)
@@ -95,9 +94,6 @@ GEM
       servolux
       tilt (~> 2.0.9)
       uglifier (~> 3.0)
-    middleman-minify-html (3.4.1)
-      htmlcompressor (~> 0.2.0)
-      middleman-core (>= 3.2)
     middleman-sprockets (4.1.1)
       middleman-core (~> 4.0)
       sprockets (>= 3.0)
@@ -106,8 +102,7 @@ GEM
       rouge (~> 3.2)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.14.0)
-    nio4r (2.5.2)
+    minitest (5.14.1)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     padrino-helpers (0.13.3.4)
@@ -118,11 +113,7 @@ GEM
       activesupport (>= 3.1)
     parallel (1.19.1)
     public_suffix (4.0.5)
-    puma (4.3.3)
-      nio4r (~> 2.0)
     rack (2.2.2)
-    rack-contrib (2.2.0)
-      rack (~> 2.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails-dom-testing (2.0.3)
@@ -137,31 +128,31 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (13.0.1)
-    rb-fsevent (0.10.3)
+    rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redcarpet (3.5.0)
     regexp_parser (1.7.0)
-    rouge (3.17.0)
+    rouge (3.19.0)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
       rspec-mocks (~> 3.9.0)
-    rspec-core (3.9.1)
-      rspec-support (~> 3.9.1)
-    rspec-expectations (3.9.1)
+    rspec-core (3.9.2)
+      rspec-support (~> 3.9.3)
+    rspec-expectations (3.9.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-mocks (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
-    rspec-support (3.9.2)
+    rspec-support (3.9.3)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sassc (2.2.1)
+    sassc (2.3.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
@@ -193,15 +184,10 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  dotenv
   liquid
   middleman (~> 4.2)
-  middleman-minify-html
   middleman-sprockets
   middleman-syntax
-  puma
-  rack-contrib
-  rake
   redcarpet
   rspec (~> 3.9)
   sass
@@ -211,7 +197,7 @@ DEPENDENCIES
   wdm (~> 0.1)
 
 RUBY VERSION
-   ruby 2.6.5p114
+   ruby 2.6.6p146
 
 BUNDLED WITH
-   2.0.2
+   2.1.4

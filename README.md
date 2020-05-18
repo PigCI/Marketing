@@ -10,6 +10,8 @@ This site helps promote the [`pig-ci-rails`](https://github.com/PigCI/pig-ci-rai
 2. `bundle && yarn`
 3. `bundle exec middleman s`
 
+Alternatively, you can also run this via docker-compose.
+
 ## Deploying
 
 This is hosted on https://www.netlify.com/ - When commits are merged into `master`, they'll be deployed automatically.
