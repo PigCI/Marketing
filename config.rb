@@ -32,7 +32,7 @@ page '/*.txt', layout: false
 
 helpers do
   def root_url
-    ENV.fetch('URL') { 'https://pigci.com' }
+    ENV.fetch('URL') { 'https://pigci.mikerogers.io' }
   end
 
   def current_url

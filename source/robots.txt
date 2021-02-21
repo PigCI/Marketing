@@ -1,4 +1,4 @@
-Sitemap: https://pigci.com/sitemap.txt
+Sitemap: https://pigci.mikerogers.io/sitemap.txt
 
 User-agent: *
 Allow: /
