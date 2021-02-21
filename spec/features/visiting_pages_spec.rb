@@ -1,8 +1,8 @@
-require 'spec_helper'
+require "spec_helper"
 
-feature 'Visting Pages' do
+feature "Visiting Pages" do
   [
-    '/',
+    "/"
   ].each do |page_route|
     scenario "#{page_route} load successfully" do
       visit page_route

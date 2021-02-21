@@ -2,9 +2,6 @@ name: RSpec
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
@@ -12,27 +9,26 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Set up Ruby 2.7
+    # Setup Ruby
+    # https://github.com/ruby/setup-ruby#single-job
+    - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7.2
-        
-    - uses: actions/cache@v1
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-
+        bundler-cache: true
 
+    # Setup Yarn
+    - name: Setup Yarn
+      uses: bahmutov/npm-install@v1
+
+    # Build the middleman site
     - name: Build App
       env:
         RAILS_ENV: test
       run: |
-        gem install bundler
-        bundle config path vendor/bundle
-        bundle install --jobs 4 --retry 3
-        yarn
         bundle exec middleman build --verbose
+
+    # Run RSpec again the new change
     - name: Run tests
       env:
         RAILS_ENV: test
